@@ -1,0 +1,114 @@
+---
+import Container from '@/components/Container.astro';
+---
+
+<section id="contact" class="py-24 bg-dark-background text-dark-foreground border-t border-dark-border overflow-hidden" data-ps="src/components/home/ContactForm.astro:hrgilw">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24" data-ps="src/components/home/ContactForm.astro:fufm9f">
+      <!-- Info -->
+      <div class="reveal" data-ps="src/components/home/ContactForm.astro:fufm9e">
+        <span class="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-4" data-ps="src/components/home/ContactForm.astro:g2vbz6">Secure Channel</span>
+        <h2 class="text-h2 font-bold mb-8" data-ps="src/components/home/ContactForm.astro:f1qe77">Initiate Advisory</h2>
+        <p class="text-lg text-dark-muted-foreground mb-12 max-w-lg" data-ps="src/components/home/ContactForm.astro:p5uxtl">Our team responds to verified corporate inquiries and RFP initiations. Strategic alignment begins with a secure consultation.</p>
+
+        <div class="space-y-8 pt-8 border-t border-dark-border" data-ps="src/components/home/ContactForm.astro:fufm9d">
+          <div data-ps="src/components/home/ContactForm.astro:9ocn1j">
+            <span class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:g2vbz5">Direct Inquiry</span>
+            <a href="mailto:Info@speoc.com" class="text-2xl font-bold hover:text-primary transition-colors font-display" data-ps="src/components/home/ContactForm.astro:i1x14g">Info@speoc.com</a>
+          </div>
+          <div data-ps="src/components/home/ContactForm.astro:9ocn1i">
+            <span class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:g2vbz4">Global Operations</span>
+            <p class="text-lg" data-ps="src/components/home/ContactForm.astro:p5uxtk">Executive Advisory Centers in Strategic Markets</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="bg-dark-border/30 p-8 md:p-12 rounded-sm border border-dark-border reveal reveal-delay-1" data-ps="src/components/home/ContactForm.astro:9ocn1h">
+        <form id="contact-form" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-ps="src/components/home/ContactForm.astro:9ocn1g">
+            <div data-ps="src/components/home/ContactForm.astro:9ocn1f">
+              <label for="name" class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:5gyyq8">Full Name</label>
+              <input type="text" id="name" name="name" required class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+            </div>
+            <div data-ps="src/components/home/ContactForm.astro:9ocn1e">
+              <label for="organization" class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:5gyyq7">Organization</label>
+              <input type="text" id="organization" name="organization" required class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+            </div>
+          </div>
+          
+          <div data-ps="src/components/home/ContactForm.astro:9ocn1d">
+            <label for="email" class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:5gyyq6">Corporate Email</label>
+            <input type="email" id="email" name="email" required class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+          </div>
+
+          <div data-ps="src/components/home/ContactForm.astro:9ocn1c">
+            <label for="focus" class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:5gyyq5">Security Focus Area</label>
+            <select id="focus" name="focus" class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+              <option value="cybersecurity">Strategic Cybersecurity</option>
+              <option value="privacy">Privacy Engineering</option>
+              <option value="compliance">Governance & Compliance</option>
+              <option value="emerging">Emerging Technology</option>
+            </select>
+          </div>
+
+          <div data-ps="src/components/home/ContactForm.astro:9ocn1b">
+            <label for="message" class="block text-xs font-bold uppercase tracking-widest text-dark-muted-foreground mb-2" data-ps="src/components/home/ContactForm.astro:5gyyq4">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"></textarea>
+          </div>
+
+          <button type="submit" id="contact-submit" class="w-full bg-primary text-primary-foreground font-bold uppercase tracking-widest py-4 hover:bg-primary-hover transition-all" data-ps="src/components/home/ContactForm.astro:n0ol6h">
+            Secure Submission
+          </button>
+          
+          <div id="contact-status" class="hidden text-sm text-center pt-4" data-ps="src/components/home/ContactForm.astro:9ocn1a"></div>
+        </form>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const status = document.getElementById('contact-status') as HTMLDivElement;
+  const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Authenticating...';
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/psapi-internal-v1/forms/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          organization: formData.get('organization'),
+          focus: formData.get('focus'),
+          message: formData.get('message'),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        status.className = 'text-green-400 block pt-4';
+        status.textContent = 'Secure message transmitted successfully.';
+        form.reset();
+      } else {
+        throw new Error(result.error || 'Transmission failure.');
+      }
+    } catch (err) {
+      status.className = 'text-red-400 block pt-4';
+      status.textContent = err instanceof Error ? err.message : 'Transmission failure. Please retry.';
+    } finally {
+      status.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Secure Submission';
+    }
+  });
+</script>

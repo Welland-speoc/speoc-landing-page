@@ -1,0 +1,44 @@
+  ---
+  // Footer component - shared across all pages
+  import Container from '@/components/Container.astro';
+  import { SITE } from '@/config/site';
+
+  export interface Props {
+    companyName?: string;
+    companyDescription?: string;
+    copyright?: string;
+  }
+
+  const {
+    companyName = SITE.name,
+    companyDescription = SITE.description,
+    copyright = `© ${new Date().getFullYear()} ${companyName}. All rights reserved.`
+  } = Astro.props;
+  ---
+
+  <footer class="bg-dark text-dark-foreground py-12" data-ps="src/components/Footer.astro:ikmf33">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8" data-ps="src/components/Footer.astro:p4vf88">
+        <!-- Company Info -->
+        <div data-ps="src/components/Footer.astro:p4vf89">
+          <h2 class="text-xl font-bold text-dark-foreground mb-4 tracking-tighter" data-ps="src/components/Footer.astro:f0091f">SPEOC</h2>
+          <p class="text-sm text-dark-muted-foreground mb-4 max-w-sm" data-ps="src/components/Footer.astro:euol">Security and Privacy, Engineered for Optimisation and Confidence. Transforming structural risk into strategic advantage for the global enterprise.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div data-ps="src/components/Footer.astro:p4vf8a">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-dark-foreground mb-6" data-ps="src/components/Footer.astro:f0091e">Corporate</h2>
+          <ul class="list-none p-0 m-0 flex flex-col gap-4">
+            <li data-ps="src/components/Footer.astro:wyji7d"><a href="/#solutions" class="text-sm text-dark-muted-foreground no-underline hover:text-primary transition-colors font-bold uppercase tracking-widest" data-ps="src/components/Footer.astro:7gqc0l">Practice Areas</a></li>
+            <li data-ps="src/components/Footer.astro:wyji7e"><a href="/#accolades" class="text-sm text-dark-muted-foreground no-underline hover:text-primary transition-colors font-bold uppercase tracking-widest" data-ps="src/components/Footer.astro:7gqc0m">Industry Leadership</a></li>
+            <li data-ps="src/components/Footer.astro:wyji7f"><a href="/#contact" class="text-sm text-dark-muted-foreground no-underline hover:text-primary transition-colors font-bold uppercase tracking-widest" data-ps="src/components/Footer.astro:8o2pe">Contact Advisory</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-dark-border pt-8 text-center" data-ps="src/components/Footer.astro:p4vf8b">
+        <p class="text-sm text-dark-muted" data-ps="src/components/Footer.astro:euom">{copyright}</p>
+      </div>
+    </Container>
+  </footer>
