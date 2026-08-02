@@ -39,6 +39,7 @@ const noIndexPaths = collectNoIndexPaths();
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   output: 'static',
   trailingSlash: 'always',
   adapter: cloudflare({
