@@ -57,6 +57,7 @@ import Container from '@/components/Container.astro';
             <textarea id="message" name="message" rows="4" required class="w-full bg-dark-background border border-dark-border px-4 py-3 text-dark-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"></textarea>
           </div>
 
+          <altcha-widget challenge="/psapi-internal-v1/altcha/challenge" display="invisible" auto="onfocus"></altcha-widget>
           <button type="submit" id="contact-submit" class="w-full bg-primary text-primary-foreground font-bold uppercase tracking-widest py-4 hover:bg-primary-hover transition-all" data-ps="src/components/home/ContactForm.astro:n0ol6h">
             Secure Submission
           </button>
@@ -69,6 +70,8 @@ import Container from '@/components/Container.astro';
 </section>
 
 <script>
+  import 'altcha';
+
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const status = document.getElementById('contact-status') as HTMLDivElement;
   const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement;
@@ -90,12 +93,20 @@ import Container from '@/components/Container.astro';
           organization: formData.get('organization'),
           focus: formData.get('focus'),
           message: formData.get('message'),
+          altcha: formData.get('altcha'),
         }),
       });
 
-      const result = await response.json();
+      // Ensure we can handle non-JSON error responses
+      let result;
+      const responseText = await response.text();
+      try {
+        result = JSON.parse(responseText);
+      } catch (e) {
+        throw new Error('Server returned an invalid response.');
+      }
 
-      if (result.success) {
+      if (response.ok && result?.success) {
         status.className = 'text-green-400 block pt-4';
         status.textContent = 'Secure message transmitted successfully.';
         form.reset();
