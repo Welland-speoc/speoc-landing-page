@@ -80,6 +80,7 @@ import Container from '@/components/Container.astro';
     e.preventDefault();
     submitBtn.disabled = true;
     submitBtn.textContent = 'Authenticating...';
+    console.log("Submitting secure form v2...");
 
     const formData = new FormData(form);
 
