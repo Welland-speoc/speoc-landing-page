@@ -97,25 +97,30 @@ import Container from '@/components/Container.astro';
         }),
       });
 
-      // Ensure we can handle non-JSON error responses
-      let result;
       const responseText = await response.text();
-      try {
-        result = JSON.parse(responseText);
-      } catch (e) {
-        throw new Error('Server returned an invalid response.');
+      let errorMsg = 'Transmission failure.';
+      
+      if (!response.ok) {
+        if (responseText) {
+          try {
+            const result = JSON.parse(responseText);
+            if (result.error) errorMsg = result.error;
+          } catch (e) {
+            // Not JSON, just use default error
+          }
+        }
+        throw new Error(errorMsg);
       }
 
-      if (response.ok && result?.success) {
-        status.className = 'text-green-400 block pt-4';
-        status.textContent = 'Secure message transmitted successfully.';
-        form.reset();
-      } else {
-        throw new Error(result.error || 'Transmission failure.');
-      }
+      // Success path
+      status.className = 'text-green-400 block pt-4';
+      status.textContent = 'Secure message transmitted successfully.';
+      form.reset();
+      
     } catch (err) {
       status.className = 'text-red-400 block pt-4';
       status.textContent = err instanceof Error ? err.message : 'Transmission failure. Please retry.';
+      console.error(err);
     } finally {
       status.classList.remove('hidden');
       submitBtn.disabled = false;
