@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'SPEOC',
-  title: 'Security and Privacy, Engineered for Optimisation and Confidence',
+  title: 'Security, Privacy, Engineered for Operational Continuity',
   description:
     'Enterprise cybersecurity and privacy governance consulting for executive boards and security leaders.',
   url:
