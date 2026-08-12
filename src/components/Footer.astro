@@ -18,15 +18,20 @@
 
   <footer class="bg-dark text-dark-foreground py-12" data-ps="src/components/Footer.astro:ikmf33">
     <Container>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8" data-ps="src/components/Footer.astro:p4vf88">
+      <div class="flex flex-col md:flex-row justify-between gap-8 mb-8" data-ps="src/components/Footer.astro:p4vf88">
         <!-- Company Info -->
         <div data-ps="src/components/Footer.astro:p4vf89">
           <h2 class="text-xl font-bold text-dark-foreground mb-4 tracking-tighter" data-ps="src/components/Footer.astro:f0091f">SPEOC</h2>
-          <p class="text-sm text-dark-muted-foreground mb-4 max-w-sm" data-ps="src/components/Footer.astro:euol">Security and Privacy, Engineered for Optimisation and Confidence. Transforming structural risk into strategic advantage for the global enterprise.</p>
+          <p class="text-sm text-dark-muted-foreground mb-4 whitespace-nowrap overflow-hidden text-ellipsis md:max-w-none" data-ps="src/components/Footer.astro:euol">
+            Security, Privacy, Engineered for Operational Continuity
+          </p>
+          <p class="text-sm text-dark-muted-foreground mt-8" data-ps="src/components/Footer.astro:euot">
+            We make trust an enterprise advantage.
+          </p>
         </div>
 
         <!-- Quick Links -->
-        <div data-ps="src/components/Footer.astro:p4vf8a">
+        <div data-ps="src/components/Footer.astro:p4vf8a" class="md:text-right">
           <h2 class="text-xs font-bold uppercase tracking-widest text-dark-foreground mb-6" data-ps="src/components/Footer.astro:f0091e">Corporate</h2>
           <ul class="list-none p-0 m-0 flex flex-col gap-4">
             <li data-ps="src/components/Footer.astro:wyji7d"><a href="/#solutions" class="text-sm text-dark-muted-foreground no-underline hover:text-primary transition-colors font-bold uppercase tracking-widest" data-ps="src/components/Footer.astro:7gqc0l">Practice Areas</a></li>
