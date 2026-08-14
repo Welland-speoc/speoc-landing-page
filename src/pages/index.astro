@@ -13,6 +13,7 @@ import ContactForm from '@/components/home/ContactForm.astro';
   title={SITE.title}
   description={SITE.description}
   type="website"
+  keywords="Security, Privacy, Engineered for Operational Continuity, SPEOC, Enterprise cybersecurity, privacy governance consulting, executive boards, security leaders"
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -27,4 +28,9 @@ import ContactForm from '@/components/home/ContactForm.astro';
   <MissionVision />
   <Accolades />
   <ContactForm />
+
+  <!-- Hidden SEO Keywords -->
+  <div class="sr-only" aria-hidden="true" data-ps="src/pages/index.astro:seo-keywords">
+    Security, Privacy, Engineered for Operational Continuity, SPEOC, Enterprise cybersecurity, privacy governance consulting, executive boards, security leaders, Risk Management, Digital Resilience, Identity Management, Keys Cryptography, Asia-Pacific, 斯安, 網絡安全, 私隱保護, 人工智能風險治理, 風險治理, 後量子密碼學, 密鑰管理, 數碼韌性.
+  </div>
 </BaseLayout>
