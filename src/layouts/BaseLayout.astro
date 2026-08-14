@@ -8,6 +8,7 @@ import { SITE } from '@/config/site';
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
   image?: string;
   type?: string;
   jsonLd?: Record<string, any>;
@@ -16,7 +17,7 @@ export interface Props {
   lang?: string;
 }
 
-const { title, description, image, type, jsonLd, noIndex, canonicalUrl, lang } = Astro.props;
+const { title, description, keywords, image, type, jsonLd, noIndex, canonicalUrl, lang } = Astro.props;
 const htmlLang = lang ?? Astro.currentLocale ?? SITE.lang;
 ---
 
@@ -29,6 +30,7 @@ const htmlLang = lang ?? Astro.currentLocale ?? SITE.lang;
     <SEOHead
       title={title}
       description={description}
+      keywords={keywords}
       image={image}
       type={type}
       jsonLd={jsonLd}

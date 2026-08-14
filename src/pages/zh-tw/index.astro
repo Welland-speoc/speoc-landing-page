@@ -1,0 +1,103 @@
+---
+import { SITE } from '@/config/site';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Purpose from '@/components/home/Purpose.astro';
+import Solutions from '@/components/home/Solutions.astro';
+import MissionVision from '@/components/home/MissionVision.astro';
+import Accolades from '@/components/home/Accolades.astro';
+import ContactForm from '@/components/home/ContactForm.astro';
+---
+
+<BaseLayout
+  title={`SPEOC 「斯安」有限公司`}
+  description="以安全與隱私為基石，為客戶打造優化卓越、持續領先的解決方案。"
+  lang="zh-TW"
+  keywords="斯安, 網絡安全, 私隱保護, 人工智能風險治理, 風險治理, 後量子密碼學, 密鑰管理, 數碼韌性"
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: "SPEOC 「斯安」有限公司",
+    url: new URL(Astro.url.pathname, SITE.url).toString(),
+    sameAs: Object.values(SITE.socials),
+  }}
+>
+  <section id="hero" class="relative overflow-hidden bg-background pt-[var(--nav-height)] pb-12 md:pb-24" data-ps="src/pages/zh-tw/index.astro:3sdfuq">
+    <Container class="relative z-10">
+      <div class="flex flex-col items-center text-center" data-ps="src/pages/zh-tw/index.astro:vb3t23">
+        <!-- Text Block -->
+        <div class="w-full max-w-4xl py-12 md:py-20 flex flex-col items-center justify-center" data-ps="src/pages/zh-tw/index.astro:vb3t24">
+          <div class="inline-flex items-center gap-2 mb-8 reveal" data-ps="src/pages/zh-tw/index.astro:3km7bo">
+            <span class="h-px w-8 bg-primary" data-ps="src/pages/zh-tw/index.astro:ix6f01"></span>
+            <span class="text-sm font-bold tracking-widest uppercase text-primary" data-ps="src/pages/zh-tw/index.astro:ix6f00">Strategic Advisory</span>
+            <span class="h-px w-8 bg-primary" data-ps="src/pages/zh-tw/index.astro:ix6ezz"></span>
+          </div>
+          
+          <h1 class="text-h1 font-bold mb-8 text-foreground leading-[1.05] reveal" data-ps="src/pages/zh-tw/index.astro:70czo0">
+             SPEOC <span class="text-primary italic" data-ps="src/pages/zh-tw/index.astro:ix6ezy">「斯安」有限公司</span> 
+          </h1>
+          
+          <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-muted-foreground leading-relaxed reveal reveal-delay-1" data-ps="src/pages/zh-tw/index.astro:fu2yac">
+            以安全與隱私為基石，為客戶打造優化卓越、持續領先的解決方案。
+          </p>
+          <p class="text-lg mb-12 max-w-3xl mx-auto text-muted-foreground leading-relaxed reveal reveal-delay-1" data-ps="src/pages/zh-tw/index.astro:fu2yad">
+            「斯安」是一家專注於網絡安全、私隱保護及人工智能風險治理的專業顧問公司。我們協助全球企業將風險與合規要求，轉化為韌性與策略優勢。<br/><br/>
+            <strong>服務範疇：</strong>風險治理、後量子密碼學、密鑰管理、人員與機器身分管理，以及數碼韌性。
+          </p>
+          
+          <div class="flex flex-wrap justify-center gap-4 reveal reveal-delay-2" data-ps="src/pages/zh-tw/index.astro:3km7bn">
+            <a href="#solutions" class="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-sm hover:bg-primary-hover transition-all hover-lift" data-ps="src/pages/zh-tw/index.astro:my0uz8">
+              Practice Areas
+            </a>
+            <a href="#accolades" class="px-8 py-4 border border-secondary text-secondary font-bold rounded-sm hover:bg-secondary hover:text-secondary-foreground transition-all" data-ps="src/pages/zh-tw/index.astro:my0uz9">
+              Industry Leadership
+            </a>
+            <a href="#contact" class="px-8 py-4 border border-secondary text-secondary font-bold rounded-sm hover:bg-secondary hover:text-secondary-foreground transition-all" data-ps="src/pages/zh-tw/index.astro:my0uza">
+              Contact Advisory
+            </a>
+          </div>
+
+          <!-- Diagnostic Micro-Ledger -->
+          <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 w-full border-t border-border reveal reveal-delay-3" data-ps="src/pages/zh-tw/index.astro:3km7bm">
+            <div data-ps="src/pages/zh-tw/index.astro:3km7bl">
+              <span class="block text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" data-ps="src/pages/zh-tw/index.astro:ix6ezx">Geographical coverage</span>
+              <span class="block text-xl md:text-2xl font-bold text-foreground" data-ps="src/pages/zh-tw/index.astro:ix6ezw">Asia-Pacific</span>
+            </div>
+            <div data-ps="src/pages/zh-tw/index.astro:3km7bk">
+              <span class="block text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" data-ps="src/pages/zh-tw/index.astro:ix6ezv">Compliance</span>
+              <span class="block text-xl md:text-2xl font-bold text-foreground" data-ps="src/pages/zh-tw/index.astro:ix6ez9">Cybersecurity, Privacy</span>
+            </div>
+            <div class="hidden md:block" data-ps="src/pages/zh-tw/index.astro:3km7bj">
+              <span class="block text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" data-ps="src/pages/zh-tw/index.astro:ix6ez8">Delivery</span>
+              <span class="block text-xl md:text-2xl font-bold text-foreground" data-ps="src/pages/zh-tw/index.astro:ix6ez7">Solutions + Services</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Block -->
+        <div class="w-full relative h-[400px] md:h-[500px] lg:h-[650px] mt-8 rounded-sm overflow-hidden reveal-up border border-border" data-ps="src/pages/zh-tw/index.astro:3km7bi">
+          <div class="absolute inset-0" data-ps="src/pages/zh-tw/index.astro:3km7bh">
+            <div class="relative h-full w-full overflow-hidden" data-ps="src/pages/zh-tw/index.astro:3km7bg">
+              <img 
+                src="https://pagesmith-cdn.com/462bac59/images/change-the-text-on-the-laptop-screen-to-read-speoc-instead-o-65b6-1024.webp" 
+                srcset="https://pagesmith-cdn.com/462bac59/images/change-the-text-on-the-laptop-screen-to-read-speoc-instead-o-65b6-1024.webp 1024w, https://pagesmith-cdn.com/462bac59/images/change-the-text-on-the-laptop-screen-to-read-speoc-instead-o-65b6-768.webp 768w, https://pagesmith-cdn.com/462bac59/images/change-the-text-on-the-laptop-screen-to-read-speoc-instead-o-65b6-640.webp 640w, https://pagesmith-cdn.com/462bac59/images/change-the-text-on-the-laptop-screen-to-read-speoc-instead-o-65b6-320.webp 320w"
+                sizes="100vw"
+                alt="Diverse executive consulting team with SPEOC displayed on laptop and glass partition" 
+                class="h-full w-full object-cover object-center"
+                loading="eager"
+                fetchpriority="high" data-ps="src/pages/zh-tw/index.astro:ssuoql" />
+              <div class="absolute inset-0 bg-secondary/10 mix-blend-multiply" data-ps="src/pages/zh-tw/index.astro:3km7bf"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
+  <Purpose />
+  <Solutions />
+  <MissionVision />
+  <Accolades />
+  <ContactForm />
+</BaseLayout>
