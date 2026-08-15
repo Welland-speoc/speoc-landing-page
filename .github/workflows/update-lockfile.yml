@@ -25,7 +25,7 @@ jobs:
           node-version: 22
 
       - name: Regenerate pnpm‑lock.yaml
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile --lockfile-only
 
       - name: Commit & push updated lockfile
         run: |
