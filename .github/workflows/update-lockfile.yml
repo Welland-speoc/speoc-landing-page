@@ -1,25 +1,25 @@
 name: Update pnpm lockfile after PageSmith
 on:
   push:
-    branches: [ main ] # change this if your production branch is not main
+    branches: [ main ]
 
 jobs:
   update-lock:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # required so action can push commit back to repo
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm 10.11.1 (match Cloudflare Pages version)
-        uses: pnpm/action-setup@v9
+      - name: Setup pnpm 10.11.1
+        uses: pnpm/action-setup@v6
         with:
-          pnpm-version: 10.11.1
+          version: 10.11.1
 
-      - name: Setup Node.js 22 (match Cloudflare Pages nodejs@22.16.0)
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -32,7 +32,6 @@ jobs:
           git config --global user.name "PageSmith Auto Bot"
           git config --global user.email "bot@speoc.com"
           git add pnpm-lock.yaml
-          # Only commit if lockfile actually changed
           if [[ -n $(git status --porcelain pnpm-lock.yaml) ]]; then
             git commit -m "🤖 Auto‑sync pnpm‑lock.yaml for PageSmith changes"
             git push
